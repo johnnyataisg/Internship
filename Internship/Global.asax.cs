@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using Internship.Models;
+using Internship.DAL;
+
 
 namespace Internship
 {
@@ -12,6 +16,8 @@ namespace Internship
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<InternshipContext>(null);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

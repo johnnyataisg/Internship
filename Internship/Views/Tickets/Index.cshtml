@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Internship.Models.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ticketNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eventDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ticketNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eventDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ticketKey }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ticketKey }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ticketKey })
+        </td>
+    </tr>
+}
+
+</table>
+<a href=@Url.Action("DeleteAll", "Tickets")>Delete All Tickets</a>

@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.col-2nd {
+    padding-left: 20px;
+}

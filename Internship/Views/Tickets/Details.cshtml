@@ -1,0 +1,42 @@
+﻿@model Internship.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ticketNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ticketNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eventDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ticketKey }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
